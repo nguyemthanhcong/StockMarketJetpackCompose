@@ -35,10 +35,21 @@ android {
     }
 
     buildTypes {
+        debug {
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_KEY", '"GJX8JMWJ1OTRYRIG"'
+            buildConfigField "String", "BASE_URL", '"https://www.alphavantage.co/"'
+        }
+
         release {
+            debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_KEY",'"GJX8JMWJ1OTRYRIG"'
+            buildConfigField "String", "BASE_URL", '"https://www.alphavantage.co/"'
         }
+
     }
     compileOptions {
         coreLibraryDesugaringEnabled true
